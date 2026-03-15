@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZM7VEMKXK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DZM7VEMKXK');
+</script>
+<meta charset="UTF-8">
+<title>Catálogo · Thais Papelería</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- PREVIEW WHATSAPP -->
+<meta property="og:title" content="Papelería para eventos y emprendimientos | Thais Papelería">
+<meta property="og:description" content="Visitá nuestro catálogo online y conocé todas las opciones ✨">
+<meta property="og:image" content="https://thais-papeleria-catalogo.netlify.app/img/preview-whatsapp.jpg">
+<meta property="og:url" content="https://thais-papeleria-catalogo.netlify.app/">
+<meta property="og:type" content="website">
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,#f3e9ff,#e6f7f4);
+  color:#333;
+}
+
+/* HEADER */
+header{text-align:center;padding:25px 15px;}
+header img{width:120px;}
+header h1{margin:10px 0 5px;color:#6b5ca5;}
+header p{margin:0;font-size:15px;}
+
+/* BOTONES */
+.menu{
+  padding:30px 20px;
+  display:grid;
+  gap:20px;
+  max-width:420px;
+  margin:0 auto;
+}
+.boton{
+  padding:22px;
+  border-radius:24px;
+  text-align:center;
+  font-size:1.1rem;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+  color:white;
+  transition:.25s;
+}
+.boton:hover{transform:scale(1.03);}
+.eventos{background:linear-gradient(135deg,#ff5fa2,#ff86b7);}
+.emprendimientos{background:linear-gradient(135deg,#6EC1E4,#8FD3C7);}
+.organizacion{background:linear-gradient(135deg,#B58EDC,#8EC5FC);}
+.subcategoria{
+  background:white;
+  color:#6b5ca5;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+/* SECCIONES */
+.seccion{display:none;padding:20px;max-width:900px;margin:0 auto;}
+.volver{font-weight:600;color:#6b5ca5;cursor:pointer;margin-bottom:15px;}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+/* CARD */
+.card{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+summary{list-style:none;cursor:pointer;}
+summary::-webkit-details-marker{display:none;}
+.card h3{text-align:center;padding:12px;margin:0;color:#6b5ca5;}
+.indicacion{
+  text-align:center;
+  font-size:13px;
+  color:#999;
+  margin-bottom:8px;
+}
+
+/* SLIDER */
+.slider-container{position:relative;}
+.slider{
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+}
+.slider::-webkit-scrollbar{display:none;}
+.slider img,
+.imagen-unica{
+  width:100%;
+  height:100%;
+  aspect-ratio:4/3;
+  object-fit:contain;
+  scroll-snap-align:start;
+  cursor:pointer;
+
+  background:#fff;
+  padding:10px;
+
+  border-radius:20px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+.slider{
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-snap-stop: always; /* 👈 ESTA ES LA CLAVE PARA MOBILE */
+  scrollbar-width:none;
+}
+
+
+
+
+/* FLECHAS */
+.flecha{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,.55);
+  color:white;
+  border:none;
+  font-size:22px;
+  padding:8px 12px;
+  cursor:pointer;
+  border-radius:50%;
+}
+.izq{left:8px;}
+.der{right:8px;}
+
+/* DETALLE */
+.detalle{padding:15px;font-size:.95rem;}
+.detalle ul{padding-left:18px;}
+.detalle li{margin-bottom:6px;}
+
+/* ICONOS FLOTANTES — FIX DEFINITIVO */
+.whatsapp,
+.instagram{
+  position:fixed;
+  right:20px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+  z-index:10;
+}
+
+/* CLAVE: el <a> */
+.whatsapp,
+.instagram{
+  text-decoration:none !important;
+  border:none !important;
+  outline:none !important;
+  line-height:0;
+}
+
+.whatsapp{bottom:20px;background:#25D366;}
+.instagram{bottom:90px;background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);}
+
+.whatsapp i,
+.instagram i{
+  display:block;
+  font-size:26px;
+  line-height:1;
+  color:white;
+}
+
+/* FOOTER */
+footer{text-align:center;padding:25px;color:#999;font-size:14px;}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="img/logo.png">
+  <h1>Papelería personalizada</h1>
+  <p>Catálogo 2026</p>
+</header>
+
+<div class="menu" id="inicio">
+  <div class="boton eventos" onclick="mostrar('eventos')">Papelería para eventos</div>
+  <div class="boton emprendimientos">Papelería para emprendimientos</div>
+  <div class="boton organizacion">Papelería para organizarse</div>
+</div>
+
+<section class="seccion" id="eventos">
+  <div class="volver" onclick="volver()">← Volver</div>
+  <h2>Papelería para eventos</h2>
+   <p>
+    Papelería personalizada para cumpleaños, bautismos, comuniones y celebraciones especiales.
+  </p>
+  
+Podés enviarnos tus ideas o referencias, o bien tu propio diseño, y lo adaptamos para que cada detalle del evento se vea prolijo y único. 
+  </p>
+  <div class="menu">
+    <div class="boton subcategoria" onclick="mostrar('libritos')">Libritos para colorear</div>
+    <div class="boton subcategoria" onclick="mostrar('banderines')">Banderines</div>
+    <div class="boton subcategoria" onclick="mostrar('Bolsitas')">Bolsitas</div>
+    <div class="boton subcategoria" onclick="mostrar('Cajitas')">Cajitas</div>
+    <div class="boton subcategoria" onclick="mostrar('Pochocleras')">Pochocleras</div>
+    <div class="boton subcategoria" onclick="mostrar('Stickers')">Stickers</div>
+    <div class="boton subcategoria" onclick="mostrar('Toppers')">Toppers</div>
+  </div>
+</section>
+<footer>
+  <b>Thais Papelería</b> ♥
+</footer>
+
+<a href="https://wa.me/5493493459144" target="_blank" class="whatsapp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="https://instagram.com/thais.papeleria" target="_blank" class="instagram">
+  <i class="fab fa-instagram"></i>
+</a>
+
+<section class="seccion" id="libritos">
+  <div class="volver" onclick="mostrar('eventos')">← Volver a eventos</div>
+  <h2>Libritos para colorear</h2>
+  <p>
+    Libritos personalizados ideales para cumpleaños, bautismos y eventos infantiles.<br>
+    Se diseñan a juego con la temática del evento 🎨🖍️
+  </p>
+
+  <div class="grid">
+
+    <details class="card">
+      <summary>
+        <div class="slider-container">
+          <button class="flecha izq" onclick="scrollSlider(this,-1)">‹</button>
+          <div class="slider">
+            <img src="img/libritos-sin-bolsa2.jpg" onclick="abrir(this.src)">
+            <img src="img/libritos-sin-bolsa.jpg" onclick="abrir(this.src)">
+            <img src="img/libritos-sin-bolsa3.jpg" onclick="abrir(this.src)">
+            <img src="img/libritos-sin-bolsa4.jpg" onclick="abrir(this.src)">
+            <img src="img/libritos-sin-bolsa5.jpg" onclick="abrir(this.src)">
+          </div>
+          <button class="flecha der" onclick="scrollSlider(this,1)">›</button>
+        </div>
+        <h3>Sin bolsa</h3>
+        <div class="indicacion"> Ver precios 👆</div>
+      </summary>
+      <div class="detalle">
+        <ul>
+          <li>10 x 15 cm · 10 hojas → <b>$580</b></li>
+          <li>15 x 21 cm · 20 hojas → <b>$1420</b></li>
+        </ul>
+      </div>
+    </details>
+
+
+
+    <details class="card">
+  <summary>
+    <div class="slider-container">
+      <button class="flecha izq" onclick="scrollSlider(this,-1)">‹</button>
+
+      <div class="slider">
+        <img src="img/libritos-con-bolsa4.jpg" onclick="abrir(this.src)">
+        <img src="img/libritos-con-bolsa.jpg" onclick="abrir(this.src)">
+        <img src="img/libritos-con-bolsa2.png" onclick="abrir(this.src)">
+        <img src="img/libritos-sin-bolsa5.jpg" onclick="abrir(this.src)">
+      </div>
+
+      <button class="flecha der" onclick="scrollSlider(this,1)">›</button>
+    </div>
+
+    <h3>Con bolsa + cierre</h3>
+    <div class="indicacion">Ver precios 👆</div>
+  </summary>
+
+  <div class="detalle">
+    <ul>
+      <li>10 x 15 cm · 10 hojas → <b>$670</b></li>
+      <li>15 x 21 cm · 20 hojas → <b>$1510</b></li>
+    </ul>
+  </div>
+</details>
+
+  </div>
+</section>
+
+
+
+
+
+<section class="seccion" id="banderines">
+  <div class="volver" onclick="mostrar('eventos')">← Volver a eventos</div>
+  <h2>Banderines personalizados</h2>
+  <p>Banderines ideales para cumpleaños, baby showers y eventos especiales. Se pueden personalizar con colores y nombres 🎉✨</p>
+
+  <div class="grid">
+
+    <details class="card">
+      <summary>
+        <div class="slider-container">
+          <button class="flecha izq" onclick="scrollSlider(this,-1)">‹</button>
+          <div class="slider">
+            <img src="img/banderines1.jpg" onclick="abrir(this.src)">
+            <img src="img/banderines.jpg" onclick="abrir(this.src)">
+            <img src="img/banderines2.jpg" onclick="abrir(this.src)">
+            <img src="img/banderines3.jpg" onclick="abrir(this.src)">
+            <img src="img/banderines4.jpg" onclick="abrir(this.src)">
+            <img src="img/banderines5.jpg" onclick="abrir(this.src)">
+            <img src="img/banderines6.jpg" onclick="abrir(this.src)">
+            <img src="img/banderines7.jpg" onclick="abrir(this.src)">
+          </div>
+          <button class="flecha der" onclick="scrollSlider(this,1)">›</button>
+        </div>
+        <h3>Banderines</h3>
+        <h3>10  x 14cm aproximadamente</h3>
+        <div class="indicacion">Ver precios 👆</div>
+      </summary>
+      <div class="detalle">
+        <ul>
+          
+          <li>FELIZ CUMPLEAÑOS <b>$6.200</b></li>
+      <li>BABY SHOWER<b>$4.100</b></li>
+      <li>Por otras frases, o nombres <b>Consultar precio</b></li>
+        </ul>
+      </div>
+    </details>
+
+
+  </div>
+</section>
+
+
+
+<section class="seccion" id="Bolsitas">
+  <div class="volver" onclick="mostrar('eventos')">← Volver a eventos</div>
+  <h2>Bolsitas personalizadas</h2>
+  <p>Bolsitas sorpresitas ideales para cumpleaños, baby showers y eventos especiales. Se pueden personalizar con colores y nombres 🎉✨</p>
+
+  <div class="grid">
+
+    <details class="card">
+      <summary>
+        <div class="slider-container">
+          <button class="flecha izq" onclick="scrollSlider(this,-1)">‹</button>
+          <div class="slider">
+            <img src="img/bolsitas-con-manijas3.jpg" onclick="abrir(this.src)">
+            <img src="img/bolsitas-con-manijas.jpg" onclick="abrir(this.src)">
+            <img src="img/bolsitas-con-manijas2.jpg" onclick="abrir(this.src)">
+          </div>
+          <button class="flecha der" onclick="scrollSlider(this,1)">›</button>
+        </div>
+        <h3>Bolsitas con manijas</h3>
+        <div class="indicacion">Ver precios 👆</div>
+      </summary>
+      <div class="detalle">
+        <ul>
+          <li>10cm de ancho x 17cm de alto x 4cm de profundidad → <b>$360c/u</b></li>
+          <li>8cm de ancho x 13cm de alto x 4cm de profundidad  → <b>$360c/u</b></li>
+        </ul>
+      </div>
+    </details>
+
+
+    <details class="card">
+      <summary>
+        <div class="slider-container">
+          <button class="flecha izq" onclick="scrollSlider(this,-1)">‹</button>
+          <div class="slider">
+            <img src="img/bolsitas-sin-manijas1.jpg" onclick="abrir(this.src)">
+            <img src="img/bolsitas-sin-manijas.jpg" onclick="abrir(this.src)">
+            <img src="img/bolsitas-sin-manijas2.jpg" onclick="abrir(this.src)">
+            <img src="img/bolsitas-sin-manijas3.jpg" onclick="abrir(this.src)">
+            <img src="img/bolsitas-sin-manijas4.jpg" onclick="abrir(this.src)">
+            <img src="img/bolsitas-sin-manijas5.jpg" onclick="abrir(this.src)">
+          </div>
+          <button class="flecha der" onclick="scrollSlider(this,1)">›</button>
+        </div>
+        <h3>Bolsitas sin manijas</h3>
+        <div class="indicacion">Ver precios 👆</div>
+      </summary>
+      <div class="detalle">
+        <ul>
+          <li>10cm de ancho x 17cm de alto x 4cm de profundidad  → <b>$240 c/u</b></li>
+          <li>8cm de ancho x 13cm de alto x 4cm de profundidad  → <b>$240 c/u</b></li>
+        </ul>
+      </div>
+    </details>
+      </div>
+</section>
+
+
+
+    <section class="seccion" id="Toppers">
+  <div class="volver" onclick="mostrar('eventos')">← Volver a eventos</div>
+  <h2>Toppers personalizadas</h2>
+  <p>Bolsitas sorpresitas ideales para cumpleaños, baby showers y eventos especiales. Se pueden personalizar con colores y nombres 🎉✨</p>
+
+  <div class="grid">
+
+    <details class="card">
+      <summary>
+        <div class="slider-container">
+          <button class="flecha izq" onclick="scrollSlider(this,-1)">‹</button>
+          <div class="slider">
+            <img src="img/topper1.jpg" onclick="abrir(this.src)">
+            <img src="img/topper2.jpg" onclick="abrir(this.src)">
+            <img src="img/topper3.jpg" onclick="abrir(this.src)">
+            <img src="img/topper4.jpg" onclick="abrir(this.src)">
+            <img src="img/topper5.jpg" onclick="abrir(this.src)">
+            <img src="img/topper6.jpg" onclick="abrir(this.src)">
+            <img src="img/topper7.jpg" onclick="abrir(this.src)">
+            <img src="img/topper8.jpg" onclick="abrir(this.src)">
+            <img src="img/topper9.jpg" onclick="abrir(this.src)">
+            <img src="img/topper10.jpg" onclick="abrir(this.src)">
+            <img src="img/topper11.jpg" onclick="abrir(this.src)">
+            <img src="img/topper12.jpg" onclick="abrir(this.src)">
+             <img src="img/topper13.jpg" onclick="abrir(this.src)">
+            <img src="img/topper14.jpg" onclick="abrir(this.src)">
+          </div>
+          <button class="flecha der" onclick="scrollSlider(this,1)">›</button>
+        </div>
+        <h3>Toppers</h3>
+        <div class="indicacion">Ver precios 👆</div>
+      </summary>
+      <div class="detalle">
+        <ul>
+          <li>5cm + palitos → <b>c/u</b></li>
+          <li>8cm de ancho x 13cm de alto x 4cm de profundidad  → <b>$360c/u</b></li>
+        </ul>
+      </div>
+    </details>
+</section>
+
+
+
+
+
+
+
+
+<section class="seccion" id="Cajitas">
+  <div class="volver" onclick="mostrar('eventos')">← Volver a eventos</div>
+  <h2>Cajitas personalizadas</h2>
+  <p>Cajitas sorpresitas ideales para cumpleaños, baby showers y eventos especiales. </p>
+   <p>Se pueden personalizar con colores, temática y nombres 🎉✨</p>
+  <div class="grid">
+
+    <details class="card">
+      <summary>
+        <div class="slider-container">
+          <button class="flecha izq" onclick="scrollSlider(this,-1)">‹</button>
+          <div class="slider">
+            <img src="img/cajitas-milk.jpg" onclick="abrir(this.src)">
+            <img src="img/cajitas-milk1.jpg" onclick="abrir(this.src)">
+          </div>
+          <button class="flecha der" onclick="scrollSlider(this,1)">›</button>
+        </div>
+        <h3>Cajitas milk</h3>
+        <h3>9cm de ancho x 15cm de alto (cada lado)</h3>
+        <div class="indicacion">Ver precios 👆</div>
+      </summary>
+      <div class="detalle">
+        <ul>
+          <li>Sin relieve  → <b>$1.600c/u</b></li>
+          <li>Sin relieve + cinta  → <b>$1.800c/u</b></li>
+<li>Con relieve (sin cinta)  → <b>$1.700c/u</b></li>
+<li>Con relieve - cinta  → <b>$1.900c/u</b></li>
+        </ul>
+      </div>
+</section>
+
+
+
+
+
+
+<section class="seccion" id="Pochocleras">
+  <div class="volver" onclick="mostrar('eventos')">← Volver a eventos</div>
+  <h2>Pochocleras personalizadas</h2>
+  <p>Pochocleras ideales para cumpleaños, baby showers y eventos especiales. Se pueden personalizar con colores y nombres 🎉✨</p>
+
+  <div class="grid">
+
+    <details class="card">
+      <summary>
+        <div class="slider-container">
+          <button class="flecha izq" onclick="scrollSlider(this,-1)">‹</button>
+          <div class="slider">
+            <img src="img/pochoclera.jpg" onclick="abrir(this.src)">
+            <img src="img/pochoclera1.jpg" onclick="abrir(this.src)">
+          </div>
+          <button class="flecha der" onclick="scrollSlider(this,1)">›</button>
+        </div>
+        <h3>Pochocleras</h3>
+        <div class="indicacion">Ver precios 👆</div>
+      </summary>
+      <div class="detalle">
+        <ul>
+          <li>8cm de ancho x 13cm de alto x 4cm de profundidad  → <b>$800 c/u</b></li>
+          <li>10cm de ancho x 17cm de alto x 4cm de profundidad   → <b>$1600 c/u</b></li>
+        </ul>
+      </div>
+    </details>
+</section>
+
+
+
+
+
+<section class="seccion" id="Stickers">
+  <div class="volver" onclick="mostrar('eventos')">← Volver a eventos</div>
+  <h2>Stickers personalizados</h2>
+  <p>Stickers personalizados para sumar un detalle especial a tu evento.
+Ideales para bolsitas, souvenirs, cajitas o presentados en planchitas.
+Podés enviarnos tu idea, temática o diseño, y lo adaptamos para que combine perfecto con tu celebración.</p>
+
+  <div class="grid">
+
+    <details class="card">
+      <summary>
+        <div class="slider-container">
+          <button class="flecha izq" onclick="scrollSlider(this,-1)">‹</button>
+          <div class="slider">
+            <img src="img/stickers-bolsita.jpg" onclick="abrir(this.src)">
+            <img src="img/stickers-bolsita1.jpg" onclick="abrir(this.src)">
+            <img src="img/stickers-bolsitas2.jpg" onclick="abrir(this.src)">
+            <img src="img/stickers-bolsita-3.jpg" onclick="abrir(this.src)">
+          </div>
+          <button class="flecha der" onclick="scrollSlider(this,1)">›</button>
+        </div>
+        <h3>Stickers en bolsitas</h3>
+        <div class="indicacion">Ver precios 👆</div>
+      </summary>
+      <div class="detalle">
+        <ul>
+          <li>Bolsitas de 5 stickers (5cm), con bolsa y cierra bolsa → <b>$420c/u</b></li>
+          <li>Bolsitas de 10 stickers (5cm), con bolsa y cierra bolsa  → <b>$720c/u</b></li>
+        </ul>
+      
+  </div>
+    </details>
+
+
+  <details class="card">
+      <summary>
+        <div class="slider-container">
+          <button class="flecha izq" onclick="scrollSlider(this,-1)">‹</button>
+          <div class="slider">
+            <img src="img/stickers-planchita-con-bolsa.jpg" onclick="abrir(this.src)">
+
+          </div>
+          <button class="flecha der" onclick="scrollSlider(this,1)">›</button>
+        </div>
+        <h3>Stickers en planchitas + bolsa + cierra bolsa</h3>
+        <div class="indicacion">Ver precios 👆</div>
+      </summary>
+      <div class="detalle">
+        <ul>
+          <li>Planchita 10x15cm, con stickers, + bolsa + cierra bolsa  → <b>$550c/u</b></li>
+        </ul>
+      </div>
+
+    </details>
+
+  <details class="card">
+      <summary>
+        <div class="slider-container">
+          <button class="flecha izq" onclick="scrollSlider(this,-1)">‹</button>
+          <div class="slider">
+            <img src="img/stickers-planchita-sin-bolsa.jpg" onclick="abrir(this.src)">
+ <img src="img/stickers-planchita-sin-bolsa2.jpg" onclick="abrir(this.src)">
+          </div>
+          <button class="flecha der" onclick="scrollSlider(this,1)">›</button>
+        </div>
+        <h3>Stickers en planchitas sin bolsa</h3>
+        <div class="indicacion">Ver precios 👆</div>
+      </summary>
+      <div class="detalle">
+        <ul>
+          <li>Planchita 10x15cm, con stickers, sin bolsa  → <b>$430c/u</b></li>
+        </ul>
+      </div>
+    </details>
+</section>
+
+
+<script>
+function mostrar(id){
+  document.querySelectorAll('.seccion').forEach(s=>s.style.display='none');
+  document.getElementById('inicio').style.display='none';
+  document.getElementById(id).style.display='block';
+}
+function volver(){
+  document.querySelectorAll('.seccion').forEach(s=>s.style.display='none');
+  document.getElementById('inicio').style.display='grid';
+}
+function scrollSlider(btn, dir){
+  const slider = btn.parentElement.querySelector('.slider');
+  const img = slider.querySelector('img');
+  const ancho = img.clientWidth;
+
+  slider.scrollTo({
+    left: slider.scrollLeft + dir * ancho,
+    behavior: 'smooth'
+  });
+}
+
+
+function abrir(src){window.open(src,'_blank');}
+</script>
+
+</body>
+</html>
